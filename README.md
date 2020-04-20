@@ -20,11 +20,11 @@ service.
 known and unknown face to determine if it is the same person.
 ### Tools used
 1.  **Dlib** a general purpose library containing machine learning algorithims
-and tools for creating complex systems. [1]
+and tools for creating complex systems.
 2. [**face_recognition**](https://github.com/ageitgey/face_recognition) a python
-library built on top of dlib's state-of-the-art face recognition built with deep learning. The model has an accuracy of 99.38% on the Labeled [Faces in the Wild](http://vis-www.cs.umass.edu/lfw/) bench mark [2]
+library built on top of dlib's state-of-the-art face recognition built with deep learning. The model has an accuracy of 99.38% on the Labeled [Faces in the Wild](http://vis-www.cs.umass.edu/lfw/) bench mark
 
-#### Step 1.
+#### Implementation.
 Facedetection. \
 face detection is done using the face_recognition library.
 The detection is based on method called [Histogram of Oriented Gradients](https://www.learnopencv.com/histogram-of-oriented-gradients/)
@@ -44,3 +44,23 @@ p_image.show()
 ```
 ![alt](./face%20detection/rodo-face.PNG)
 ![alt](./face%20detection/ben.PNG)
+
+### Face Recognition
+The face recognition phase included the last steps involved. 
+The [face_recognition](https://github.com/ageitgey/face_recognition) library provides us with a function that carries out
+all these steps and these include:
+- **Identify the facial features of the located face**, the 
+face_recognition library uses the [face landmark detection](https://www.pyimagesearch.com/2018/04/02/faster-facial-landmark-detector-with-dlib/) algorithim to
+determine the facial features.
+-  **Determining the face encodings** the library uses a pre-trained
+neural network from dlib to obtain 128 measurements for face encodings.
+- **Comparing face encodings** the library uses the SVMclassifier machine learning classification algorithim to determine
+the euclidean distance between the image face encodings.
+
+for more information about how the library is implemented, checkout [this](https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78) 
+link
+
+### Below are some of the recognitions done using the face_recognition library
+![](./readme/denzeldetect.PNG)
+![](./readme/kevndetect.PNG)
+![](./readme/Lupitadetect.PNG)
