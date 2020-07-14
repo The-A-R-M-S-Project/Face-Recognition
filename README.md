@@ -1,3 +1,7 @@
+# Pre-trained facenet model
+You can download the pre-trained tensorflow facenet model trained using the [VGGFace2 dataset](https://www.robots.ox.ac.uk/~vgg/data/vgg_face2/) from [here](https://drive.google.com/file/d/1EXPBSXwTaqrSC0OhUdXNmKSh9qJUQ55-/view) and add it @/models/tf
+
+
 # Face Recognition with deep learning
 ### Description
 This document describes the face recognition model for the ARMS
