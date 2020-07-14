@@ -6,7 +6,6 @@
 # Environments
 authenv/
 venv/
-data/test
-data/train
+data/new-data
 
 __pycache__/
