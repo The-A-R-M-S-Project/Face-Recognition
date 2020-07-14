@@ -1,12 +1,17 @@
-<<<<<<< HEAD
-
 .idea/
 .vscode/
 
 # Environments
 authenv/
 venv/
-data/test
-data/train
+
+# Data
+data/new-data
+test.jpg
+
+#models
+models/tf
+models/keras
 
 __pycache__/
+.ipynb_checkpoints
