@@ -3,12 +3,12 @@ import face_recognition, glob
 import csv
 
 # loading image folders
-folders = glob.glob('../data/train/*')
+folders = glob.glob('../data/new-data/*')
 columns = ["fe"+str(i+1) for i in range(128)]
 case = 0
 
 # creating csv file
-with open('../data/train-face-encodings.csv', 'w', newline='') as f:
+with open('../data/new-data.csv', 'w', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(['Case#', 'name', *columns])
     #looping through folder
@@ -22,7 +22,8 @@ with open('../data/train-face-encodings.csv', 'w', newline='') as f:
             # determining face location
             face_location = face_recognition.face_locations(image, number_of_times_to_upsample=2)
             # determing face encodings
-            known_face_encoding = face_recognition.face_encodings(image, known_face_locations=face_location)[0]
-            case += 1
-            # writes to the csv file
-            writer.writerow([case, folder.split('\\')[-1], *known_face_encoding])
+            if face_location:
+                known_face_encoding = face_recognition.face_encodings(image, known_face_locations=face_location)[0]
+                case += 1
+                # writes to the csv file
+                writer.writerow([case, folder.split('\\')[-1], *known_face_encoding])
