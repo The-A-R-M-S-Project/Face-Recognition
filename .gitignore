@@ -5,8 +5,7 @@
 authenv/
 venv/
 
-# Data
-data/new-data
+data/new-data*
 test.jpg
 
 #models
